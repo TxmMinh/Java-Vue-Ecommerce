@@ -20,7 +20,7 @@ export default {
     methods: {}
 }
 </script>
-
+ 
 <style scoped>
 .card-img-top {
     object-fit: cover;
