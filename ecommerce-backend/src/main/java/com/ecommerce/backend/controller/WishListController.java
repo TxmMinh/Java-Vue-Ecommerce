@@ -1,7 +1,7 @@
 package com.ecommerce.backend.controller;
 
 import com.ecommerce.backend.common.ApiResponse;
-import com.ecommerce.backend.dto.ProductDto;
+import com.ecommerce.backend.dto.product.ProductDto;
 import com.ecommerce.backend.model.Product;
 import com.ecommerce.backend.model.User;
 import com.ecommerce.backend.model.WishList;

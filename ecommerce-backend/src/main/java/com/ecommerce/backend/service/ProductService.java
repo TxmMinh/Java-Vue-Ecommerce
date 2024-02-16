@@ -1,13 +1,12 @@
 package com.ecommerce.backend.service;
 
-import com.ecommerce.backend.dto.ProductDto;
+import com.ecommerce.backend.dto.product.ProductDto;
+import com.ecommerce.backend.exceptions.ProductNotExistsException;
 import com.ecommerce.backend.model.Category;
 import com.ecommerce.backend.model.Product;
-import com.ecommerce.backend.repository.CategoryRepository;
 import com.ecommerce.backend.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -43,5 +42,10 @@ public class ProductService {
         product.setCategory(category);
         product.setId(productId);
         productRepository.save(product);
+    }
+
+    public Product findById(Integer productId) {
+        return productRepository.findById(productId)
+                .orElseThrow(() -> new ProductNotExistsException("Product id " + productId + " is invalid"));
     }
 }

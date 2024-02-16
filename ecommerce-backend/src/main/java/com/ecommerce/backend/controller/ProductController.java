@@ -1,7 +1,7 @@
 package com.ecommerce.backend.controller;
 
 import com.ecommerce.backend.common.ApiResponse;
-import com.ecommerce.backend.dto.ProductDto;
+import com.ecommerce.backend.dto.product.ProductDto;
 import com.ecommerce.backend.model.Category;
 import com.ecommerce.backend.repository.CategoryRepository;
 import com.ecommerce.backend.service.ProductService;
@@ -37,7 +37,7 @@ public class ProductController {
         return new ResponseEntity<>(productDtos, HttpStatus.OK);
     }
 
-    @PostMapping("/update/{productId}")
+    @PutMapping("/update/{productId}")
     public ResponseEntity<ApiResponse> updateProduct(@PathVariable("productId") Integer productId, @RequestBody ProductDto productDto) {
         try {
             Optional<Category> categoryOptional = categoryRepo.findById(productDto.getCategoryId());

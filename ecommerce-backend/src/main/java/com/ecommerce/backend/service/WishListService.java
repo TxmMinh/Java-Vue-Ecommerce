@@ -1,12 +1,11 @@
 package com.ecommerce.backend.service;
 
-import com.ecommerce.backend.dto.ProductDto;
+import com.ecommerce.backend.dto.product.ProductDto;
 import com.ecommerce.backend.model.User;
 import com.ecommerce.backend.model.WishList;
 import com.ecommerce.backend.repository.WishListRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -31,7 +31,7 @@ public class CategoryController {
         return categoryService.listCategory();
     }
 
-    @PostMapping("/update/{categoryId}")
+    @PutMapping("/update/{categoryId}")
     public ResponseEntity<ApiResponse> updateCategory (@PathVariable("categoryId") int categoryId, @RequestBody Category category) {
         try {
             categoryService.editCategory(categoryId, category);

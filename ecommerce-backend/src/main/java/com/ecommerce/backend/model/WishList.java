@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "wish_lists")
+@Table(name = "wish_list")
 public class WishList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
