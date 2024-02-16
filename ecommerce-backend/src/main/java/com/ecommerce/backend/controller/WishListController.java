@@ -1,6 +1,7 @@
 package com.ecommerce.backend.controller;
 
 import com.ecommerce.backend.common.ApiResponse;
+import com.ecommerce.backend.dto.ProductDto;
 import com.ecommerce.backend.model.Product;
 import com.ecommerce.backend.model.User;
 import com.ecommerce.backend.model.WishList;
@@ -10,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -30,5 +33,15 @@ public class WishListController {
         WishList wishList = new WishList(user, product);
         wishListService.createWishList(wishList);
         return new ResponseEntity<>(new ApiResponse(true, "Added to wishlist"), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{token}")
+    public ResponseEntity<List<ProductDto>>  getWishList(@PathVariable("token") String token) {
+        // authenticate the token
+        authenticationService.authenticate(token);
+        // find the user
+        User user = authenticationService.getUser(token);
+        List<ProductDto> productDtos = wishListService.getWishListForUser(user);
+        return new ResponseEntity<>(productDtos, HttpStatus.OK);
     }
 }
