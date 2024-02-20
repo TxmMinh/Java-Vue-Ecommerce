@@ -17,7 +17,7 @@ public class Product {
     private Integer id;
 
     private @NotNull String name;
-    private @NotNull String imageURl;
+    private @NotNull String imageURL;
     private @NotNull double price;
     private @NotNull String description;
 

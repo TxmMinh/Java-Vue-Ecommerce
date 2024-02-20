@@ -23,7 +23,7 @@ public class OrderService {
     public Session createSession(List<CheckoutItemDto> checkoutItemDtoList) throws StripeException {
         // success and failure urls
         String successURL = baseURL + "payment/success";
-        String failreURL = baseURL + "payment/failed";
+        String failureURL = baseURL + "payment/failed";
         Stripe.apiKey = apiKey;
 
         List<SessionCreateParams.LineItem> sessionItemList = new ArrayList<>();
@@ -35,7 +35,7 @@ public class OrderService {
         SessionCreateParams params = SessionCreateParams.builder()
                 .addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setCancelUrl(failreURL)
+                .setCancelUrl(failureURL)
                 .setSuccessUrl(successURL)
                 .addAllLineItem(sessionItemList)
                 .build();

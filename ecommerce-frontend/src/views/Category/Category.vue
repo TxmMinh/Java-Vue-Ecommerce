@@ -18,27 +18,18 @@
 </template>
 
 <script>
-const axios = require("axios");
 import CategoryBox from '../../components/Category/CategoryBox.vue'
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: "Category",
+    props: ["categories"],
     components: { CategoryBox },
     data() {
         return {
-            baseURL: "http://localhost:8081/",
-            categories: []
+            baseURL: "http://localhost:8081",
         }
     },
     methods: {
-        async getCategories() {
-            await axios.get(`${this.baseURL}/category/list`)
-                .then(res => this.categories = res.data)
-                .catch(err => console.log(err))
-        }
-    },
-    mounted() {
-        this.getCategories();
     }
 }
 </script>

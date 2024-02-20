@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AddCategory from '../views/Category/AddCategory.vue'
 import Category from '../views/Category/Category.vue'
+import Product from '../views/Product/Product.vue'
+import AddProduct from '../views/Product/AddProduct.vue'
+import Admin from '../views/Admin.vue'
 
 const routes = [
   {
@@ -17,6 +20,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
+  // add category 
   {
       path: '/admin/category/add',
       name: 'AddCategory',
@@ -26,7 +30,24 @@ const routes = [
     path: '/admin/category',
     name: 'Category',
     component: Category
-}
+  },
+  // admin home page
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin
+  },
+  {
+    path: '/admin/product',
+    name: 'Product',
+    component: Product
+  },
+  // add product
+  {
+    path: '/admin/product/new',
+    name: 'AddProduct',
+    component: AddProduct
+  }
 ]
 
 const router = createRouter({
