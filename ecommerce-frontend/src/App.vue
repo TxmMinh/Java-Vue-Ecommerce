@@ -1,10 +1,11 @@
 <template>
   <NavBar/> 
-  <div id="nav">
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div>
-  <router-view :products="products" :categories="categories" :baseURL="baseURL" >
+  </div> -->
+  <router-view v-if="categories && products" 
+  :products="products" :categories="categories" :baseURL="baseURL" >
   </router-view>
 </template>
 
@@ -16,8 +17,8 @@ export default ({
   data() {
     return {
       baseURL: "http://localhost:8081",
-      categories: [],
-      products: []
+      categories: null,
+      products: null
     }
   },
   methods: {
