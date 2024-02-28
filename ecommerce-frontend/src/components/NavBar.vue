@@ -47,7 +47,19 @@
           </div>
         </div>
       </form>
-      <router-link :to="{ name: 'Admin' }"> Admin </router-link>
+      <!-- dropdown for browse -->
+      <!-- dropdown for account -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarAccount" data-toggle="dropdown">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarAccount">
+            <router-link class="dropdown-item" :to="{ name: 'SignUp'}">Sign up</router-link>
+            <router-link class="dropdown-item" :to="{ name: 'SignIn'}">Sign in</router-link>
+          </div>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
@@ -64,7 +76,7 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
 }
-a {
+.nav-link {
   color: white;
 }
 </style>
