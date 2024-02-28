@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
 @Data
@@ -25,4 +26,5 @@ public class Product {
     @JsonIgnore
     @JoinColumn(name = "category_id")
     Category category;
+
 }

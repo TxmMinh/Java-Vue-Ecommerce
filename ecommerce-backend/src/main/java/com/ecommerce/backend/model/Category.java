@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,4 +21,8 @@ public class Category {
 
     @Column(name = "image_url")
     private @NotBlank String imageUrl;
+
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    List<Product> products;
 }

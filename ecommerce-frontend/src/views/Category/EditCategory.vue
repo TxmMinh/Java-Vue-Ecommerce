@@ -42,20 +42,22 @@ export default {
   props: ["baseURL", "categories"],
   methods: {
     async editCategory() {
-        delete this.category["products"];
+        // delete this.category["products"];
         console.log('category ', this.category);
-        await axios.post(`${this.baseURL}/category/update/${this.id}`, this.category)
+        await axios.put(`${this.baseURL}/category/update/${this.id}`, this.category)
         .then(() => {
-            swal({
-                    text: "Category added successfully",
+            this.$emit("fetchData");
+            this.$router.push({name: "Category"});
+            swal({  
+                    text: "Category has been added successfully",
                     icon: "success"
-                });
+                })
         }).catch(err => console.log('err ', err));
     }
   },
   mounted() {
     this.id = this.$route.params.id;
-    this.category = this.categories.find((category) => (category.id = this.id));
+    this.category = this.categories.find((category) => (category.id == this.id));
   },
 };
 </script>

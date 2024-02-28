@@ -1,19 +1,18 @@
 <template>
   <NavBar/> 
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-  <router-view v-if="categories && products" 
-  :products="products" :categories="categories" :baseURL="baseURL" >
+  <router-view v-if="categories && products" style="min-height: 60vh" 
+  :products="products" :categories="categories" :baseURL="baseURL" @fetchData="fetchData" >
   </router-view>
+  <Footer/>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
+
 const axios = require("axios");
 export default ({
-  components: {NavBar},
+  components: {NavBar, Footer},
   data() {
     return {
       baseURL: "http://localhost:8081",

@@ -4,11 +4,16 @@
             <img :src="product.imageURL" class="card-img-top embed-responsive-item" alt="Card image cap">
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
+            <router-link :to="{name: 'ShowDetails', params: {id: product.id}}">
+                <h5 class="card-title">{{ product.name }}</h5>
+            </router-link>
             <p class="card-text">
                 {{ product.description }}
             </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <router-link :to="{name: 'EditProduct', params: {id: product.id}}"
+                v-show="$route.name == 'Product'">
+                <button class="btn btn-primary">Edit</button>
+            </router-link>
         </div>
     </div>
 </template>
@@ -23,5 +28,11 @@ export default {
 <style scoped>
 .card-img-top {
     object-fit: cover;
+}
+a {
+    text-decoration: none;
+}
+.card-title {
+    color: #484848;
 }
 </style>
