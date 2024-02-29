@@ -21,7 +21,7 @@ public class WishList {
 
     @Column(name = "created_date")
     private Date createdDate;
- 
+
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;

@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import swal from "sweetalert";
+
 export default {
   name: "NavBar",
   data() {
@@ -79,6 +81,10 @@ export default {
     signout() {
       localStorage.removeItem("token");
       this.token = null;
+      swal({
+          text: "Signout successfully",
+          icon: 'success'
+      });
     }
   },
   mounted() {
