@@ -42,14 +42,21 @@ export default {
       };
       await axios
         .post(`${this.baseURL}/user/signin`, user )
-        .then(() => {
+        .then((res) => {
           this.$router.replace("/");
+          localStorage.setItem("token", res.data.token);
           swal({
             text: "Login successfully",
             icon: "success",
           });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          swal({
+            text: "Invalid login",
+            icon: "error",
+          });          
+        });
     },
   },
 };
