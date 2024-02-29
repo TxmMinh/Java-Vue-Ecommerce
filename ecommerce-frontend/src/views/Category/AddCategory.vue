@@ -59,6 +59,8 @@ export default {
                 }
             })
             .then(() => {
+                this.$emit("fetchData");
+                this.$router.push({name: "Category"});
                 sweetalert({
                     text: "Category added successfully",
                     icon: "success"

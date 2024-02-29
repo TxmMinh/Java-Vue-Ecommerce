@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">id</Data></Cell>
+			<Cell><Data ss:Type="String">category_name</Data></Cell>
+			<Cell><Data ss:Type="String">description</Data></Cell>
+			<Cell><Data ss:Type="String">image_url</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="String">Bookstore</Data></Cell>
+			<Cell><Data ss:Type="String">A bookstore is a store that sells books, and where people can buy them</Data></Cell>
+			<Cell><Data ss:Type="String">https://www.forewordreviews.com/books/covers/my-bookstore.jpg</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">2</Data></Cell>
+			<Cell><Data ss:Type="String">Phones</Data></Cell>
+			<Cell><Data ss:Type="String"> a portable telephone that can make and receive calls over a radio frequency link while the user is moving within a telephone service area</Data></Cell>
+			<Cell><Data ss:Type="String">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGV-3Xj5H1ILLfTlFovcvut4eCZVhoFopEOa6p4zkggkM_rANicamiCanKNClxf2s1ftk&usqp=CAU</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">3</Data></Cell>
+			<Cell><Data ss:Type="String">Digital Devices</Data></Cell>
+			<Cell><Data ss:Type="String">A digital device is a piece of physical equipment that uses digital data, such as by sending, receiving, storing or processing it</Data></Cell>
+			<Cell><Data ss:Type="String">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8W7xlEJS6JcZJ3C6Bpa5JXtCfqqKANegbtw&usqp=CAU</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">4</Data></Cell>
+			<Cell><Data ss:Type="String">Computer</Data></Cell>
+			<Cell><Data ss:Type="String">A computer is an electronic device that manipulates information, or data.</Data></Cell>
+			<Cell><Data ss:Type="String">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs3Whe2c1aWgaeA9SRqyBNojC5VhlTbr3bO1_8rDBQj79yYBH5BCP564bl2AzfEVvKhMw&usqp=CAU</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">5</Data></Cell>
+			<Cell><Data ss:Type="String">Cars - Motorcycles - Bicycles</Data></Cell>
+			<Cell><Data ss:Type="String">A vehicle is a machine such as a car, bus, or truck which has an engine and is used to carry people from place to place.</Data></Cell>
+			<Cell><Data ss:Type="String">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXj31AyXH787UP2vRrKMVjZG_UM9TnQ23CiroPmYzL0GBHIUzOR0oRxC_klqFjTIMrkNY&usqp=CAU</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">6</Data></Cell>
+			<Cell><Data ss:Type="String">Fashion</Data></Cell>
+			<Cell><Data ss:Type="String">Fashion is a way of thinking and also a way of making</Data></Cell>
+			<Cell><Data ss:Type="String">https://i.pinimg.com/736x/12/c0/a1/12c0a1a6a0542be5f69b1e48f530c50c.jpg</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">7</Data></Cell>
+			<Cell><Data ss:Type="String">Watches</Data></Cell>
+			<Cell><Data ss:Type="String">Discover watches you've never seen before.</Data></Cell>
+			<Cell><Data ss:Type="String">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKI2_J9ICtav5aqkubvuhcRDKX6SwJzyrG25ffCheGOd2y_2rNIiX5jhfVk2i_pZdwDBM&usqp=CAU</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="Number">8</Data></Cell>
+			<Cell><Data ss:Type="String">Sports</Data></Cell>
+			<Cell><Data ss:Type="String">Sport pertains to any form of physical activity or game, often competitive and organized, that aims to use, maintain, or improve physical ability and skills</Data></Cell>
+			<Cell><Data ss:Type="String">https://cdn.firstcry.com/education/2022/11/25154201/Learn-Sport-Names-List-of-Sports-in-English.jpg</Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>

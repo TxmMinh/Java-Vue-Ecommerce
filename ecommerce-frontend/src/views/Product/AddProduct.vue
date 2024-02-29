@@ -74,15 +74,13 @@ export default {
 
       axios.post(this.baseURL + "/product/add", newProduct)
       .then(() => {
-        this.$router.push({ name: "Product" });
-        swal({
-          text: "Product added",
-          icon: "success",
-        });
-      })
-      .catch((err) => {
-        console.log("err ", err);
-      })
+            this.$emit("fetchDate");
+            this.$router.push({name: "Product"});
+            swal({
+                text: "Product has been added successfully",
+                icon: "success"
+            })
+        }).catch(err => console.log(err));
     },
   },
 };

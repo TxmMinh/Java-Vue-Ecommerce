@@ -64,7 +64,7 @@ export default {
             this.$emit("fetchDate");
             this.$router.push({name: "Product"});
             swal({
-                text: "Product has been added successfully",
+                text: "Product has been updated successfully",
                 icon: "success"
             })
         }).catch(err => console.log(err));
