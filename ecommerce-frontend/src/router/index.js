@@ -5,7 +5,7 @@ import Category from '@/views/Category/Category.vue'
 import Product from '@/views/Product/Product.vue'
 import AddProduct from '@/views/Product/AddProduct.vue'
 import EditProduct from '@/views/Product/EditProduct.vue'
-import Admin from '@/views/Admin.vue' 
+import Admin from '@/views/Admin/Admin.vue' 
 import ShowDetails from '@/views/Product/ShowDetails.vue'
 import ListProducts from '@/views/Category/ListProducts.vue'
 import SignUp from '@/views/SignUp.vue'
@@ -15,6 +15,7 @@ import Cart from '@/views/Cart/Cart.vue'
 import Failed from '@/views/Payment/Failed.vue'
 import Success from '@/views/Payment/Success.vue'
 import CheckOut from '@/views/Checkout/CheckOut.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
 
 const routes = [
   {
@@ -33,6 +34,12 @@ const routes = [
   },
   {
     path: '/admin/category',
+    name: 'AdminCategory',
+    component: Category
+  },
+  //Category routes
+  {
+    path: '/category',
     name: 'Category',
     component: Category
   },
@@ -56,6 +63,12 @@ const routes = [
   },
   {
     path: '/admin/product',
+    name: 'AdminProduct',
+    component: Product
+  },
+  //Product routes
+  {
+    path: '/product',
     name: 'Product',
     component: Product
   },
@@ -117,6 +130,11 @@ const routes = [
     path: '/checkout',
     name: 'CheckOut',
     component: CheckOut
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'PageNotFound',
+    component: PageNotFound
   }
 ]
 

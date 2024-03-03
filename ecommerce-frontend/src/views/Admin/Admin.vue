@@ -1,10 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="adminPanel container">
-    <router-link :to="{ name: 'Category' }">
+    <router-link :to="{ name: 'AdminCategory' }">
       <btn class="btn btn-primary btn-lg">Admin Categories</btn>
     </router-link>
-    <router-link :to="{ name: 'Product' }">
+    <router-link :to="{ name: 'AdminProduct' }">
       <button class="btn btn-primary btn-lg">Admin Product</button>
     </router-link>
   </div>

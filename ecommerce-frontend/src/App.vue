@@ -1,9 +1,10 @@
 <template>
-  <NavBar :cartCount="cartCount" @resetCartCount="resetCartCount"/> 
+  <NavBar :cartCount="cartCount" @resetCartCount="resetCartCount"
+    v-if="!['SignUp', 'SignIn'].includes($route.name)"/> 
   <router-view v-if="categories && products" style="min-height: 60vh" 
   :products="products" :categories="categories" :baseURL="baseURL" @fetchData="fetchData" >
   </router-view>
-  <Footer/>
+  <Footer v-if="!['SignUp', 'SignIn'].includes($route.name)"/>
 </template>
 
 <script>

@@ -87,7 +87,10 @@
               :to="{ name: 'WishList' }"
               >WishList</router-link
             >
-            <router-link class="dropdown-item" :to="{ name: 'Admin' }"
+            <router-link class="dropdown-item" v-if="!token" :to="{ name: 'SignIn' }"
+              >Admin</router-link
+            >
+            <router-link class="dropdown-item" v-else :to="{ name: 'Admin' }"
               >Admin</router-link
             >
             <router-link
