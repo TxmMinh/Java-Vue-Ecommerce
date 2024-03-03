@@ -43,7 +43,7 @@ export default {
       await axios
         .post(`${this.baseURL}/user/signin`, user )
         .then((res) => {
-          this.$router.replace("/");
+          this.redirectReload();
           localStorage.setItem("token", res.data.token);
           swal({
             text: "Login successfully",
@@ -58,6 +58,11 @@ export default {
           });          
         });
     },
+    redirectReload() {
+        this.$router
+          .push({ path: '/' })
+          .then(() => { this.$router.go(0) })
+      }
   },
 };
 </script>

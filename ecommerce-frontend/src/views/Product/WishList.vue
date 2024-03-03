@@ -8,7 +8,6 @@
         
         <!-- display products -->
         <div class="row">
-            {{ products }}
             <div v-for="product in products" :key="product.id" class="col-xl-4 col-md-6 col-12 pt-3 d-flex">
                 <ProductBox :product="product"></ProductBox>
             </div>
@@ -18,7 +17,7 @@
 
 <script>
 import axios from "axios";
-import ProductBox from "@/views/Product/Product.vue";
+import ProductBox from "@/components/Product/ProductBox.vue"
 
 export default {
   components: { ProductBox },
@@ -32,9 +31,9 @@ export default {
   methods: {
     fetchWishList() {
       axios
-        .get(`${this.baseURL}wishlist/${this.token}`)
-        .then((data) => {
-          this.products = data.data;
+        .get(`${this.baseURL}/wishlist/${this.token}`)
+        .then((res) => {
+          this.products = res.data;
         })
         .catch((err) => {
           console.log("err", err);

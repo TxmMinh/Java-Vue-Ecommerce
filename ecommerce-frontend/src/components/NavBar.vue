@@ -47,19 +47,70 @@
           </div>
         </div>
       </form>
-      <!-- dropdown for browse -->
-      <!-- dropdown for account -->
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
+        <!-- dropdown for browse -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarAccount" data-toggle="dropdown">
+          <a
+            class="nav-link dropdown-toggle text-light"
+            href="#"
+            id="navbarAccount"
+            data-toggle="dropdown"
+          >
+            Browse
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarAccount">
+            <router-link class="dropdown-item" :to="{ name: 'home' }"
+              >Home</router-link
+            >
+            <router-link class="dropdown-item" :to="{ name: 'Product' }"
+              >Product</router-link
+            >
+            <router-link class="dropdown-item" :to="{ name: 'Category' }"
+              >Category</router-link
+            >
+          </div>
+        </li>
+        <!-- dropdown for account -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-light"
+            href="#"
+            id="navbarAccount"
+            data-toggle="dropdown"
+          >
             Account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarAccount">
-            <router-link class="dropdown-item" v-if="token" :to="{ name: 'WishList'}">WishList</router-link>
-            <router-link class="dropdown-item" :to="{ name: 'Admin'}">Admin</router-link>
-            <router-link class="dropdown-item" v-if="!token" :to="{ name: 'SignUp'}">Sign up</router-link>
-            <router-link class="dropdown-item" v-if="!token" :to="{ name: 'SignIn'}">Sign in</router-link>
+            <router-link
+              class="dropdown-item"
+              v-if="token"
+              :to="{ name: 'WishList' }"
+              >WishList</router-link
+            >
+            <router-link class="dropdown-item" :to="{ name: 'Admin' }"
+              >Admin</router-link
+            >
+            <router-link
+              class="dropdown-item"
+              v-if="!token"
+              :to="{ name: 'SignUp' }"
+              >Sign up</router-link
+            >
+            <router-link
+              class="dropdown-item"
+              v-if="!token"
+              :to="{ name: 'SignIn' }"
+              >Sign in</router-link
+            >
             <a class="dropdown-item" v-if="token" @click="signout">Sign out</a>
+          </div>
+        </li>
+        <li class="nav-item" style="position: relative">
+          <div id="cart">
+            <span id="nav-cart-count" v-show="cartCount > 0">{{ cartCount }}</span>
+            <router-link class="text-light" :to="{ name: 'Cart' }">
+              <i class="fa fa-shopping-cart" style="font-size: 30px"></i>
+            </router-link>
           </div>
         </li>
       </ul>
@@ -72,20 +123,23 @@ import swal from "sweetalert";
 
 export default {
   name: "NavBar",
+  props: ["cartCount"],
   data() {
     return {
-      token: null
-    }
+      token: null,
+    };
   },
   methods: {
     signout() {
       localStorage.removeItem("token");
       this.token = null;
       swal({
-          text: "Signout successfully",
-          icon: 'success'
+        text: "Logged out. Visit again",
+        icon: "success",
       });
-    }
+      this.$emit("resetCartCount");
+      this.$router.push({ name: "home" });
+    },
   },
   mounted() {
     this.token = localStorage.getItem("token");
@@ -101,5 +155,24 @@ export default {
 }
 .nav-link {
   color: white;
+}
+#search-button-navbar {
+  background-color: #febd69;
+  border-color: #febd69;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+#nav-cart-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  font-size: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-left: 10px;
 }
 </style>

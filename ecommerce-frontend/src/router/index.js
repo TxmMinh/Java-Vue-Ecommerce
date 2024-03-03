@@ -11,6 +11,10 @@ import ListProducts from '@/views/Category/ListProducts.vue'
 import SignUp from '@/views/SignUp.vue'
 import SignIn from '@/views/SignIn.vue'
 import WishList from '@/views/Product/WishList.vue'
+import Cart from '@/views/Cart/Cart.vue'
+import Failed from '@/views/Payment/Failed.vue'
+import Success from '@/views/Payment/Success.vue'
+import CheckOut from '@/views/Checkout/CheckOut.vue'
 
 const routes = [
   {
@@ -88,6 +92,31 @@ const routes = [
     path: '/wishlist',
     name: 'WishList',
     component: WishList
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
+  },
+  {
+    path: '/payment/failed',
+    name: 'PaymentFailed',
+    component: Failed
+  },
+  {
+    path: '/payment/success',
+    name: 'PaymentSuccess',
+    component: Success
+  },
+  {
+    path: '/payment/success',
+    name: 'PaymentSuccess',
+    component: Success
+  },
+  {
+    path: '/checkout',
+    name: 'CheckOut',
+    component: CheckOut
   }
 ]
 

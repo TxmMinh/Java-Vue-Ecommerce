@@ -23,7 +23,8 @@ public class OrderController {
 
     // stripe session checkout api
     @PostMapping("/create-checkout-session")
-    public ResponseEntity<StripeResponse> checkoutList(@RequestBody List<CheckoutItemDto>checkoutItemDtoList) throws StripeException {
+    public ResponseEntity<StripeResponse> checkoutList(@RequestBody List<CheckoutItemDto>checkoutItemDtoList)
+            throws StripeException {
         Session session = orderService.createSession(checkoutItemDtoList);
         StripeResponse stripeResponse = new StripeResponse(session.getId());
         // send the stripe session id in response
